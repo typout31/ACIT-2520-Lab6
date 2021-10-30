@@ -48,9 +48,11 @@ app.get("/search/:movieName", (req, res) => {
       for (i = 0; i < movies.length; i++) {
         const content = movies[i].split(':')
         if (content[0].toLowerCase === search) {
-          res.render("pages/searchResult", {movieTitle: content[0], movieDesc: content[1]})
+          res.render("pages/searchResult", {movieTitle: content[0], movieDesc: content[1]});
+          break;
         } else {
-          res.render("pages/searchResult", {movieTitle: "", movieDesc: empty_error})
+          res.render("pages/searchResult", {movieTitle: "", movieDesc: empty_error});
+          break;
         }
       }
     }
